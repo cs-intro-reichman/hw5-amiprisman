@@ -110,20 +110,19 @@ public class Scrabble {
 			if (input.equals(".")){
 				break;
 			}
-			
-			if (isWordInDictionary(input)){
-				if (MyString.subsetOf(input, hand)){
+			if (MyString.subsetOf(input, hand)){
+				if (isWordInDictionary(input)){
 					hand = MyString.remove(hand,input);
 					score += wordScore(input);
 					System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points" );
 				}
 				else {
-					System.out.println("Invalid word. Try again.");
+					System.out.println("No such word in dictionary. Try again.");
 				}
 				
 			}
 			else {
-				System.out.println("No such word in dictionary. Try again.");
+				System.out.println("Invalid word. Try again.");
 			}
 		}
 		if (hand.length() == 0) {
