@@ -66,11 +66,16 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-        String newstring = "" + str.charAt(0);
-        for (int i = 1; i < str.length(); i++){
-            newstring += " " + str.charAt(i);
+        if (str instanceof String) {
+            if (str.length() >= 1) {
+                String newstring = "" + str.charAt(0);
+                for (int i = 1; i < str.length(); i++){
+                    newstring += " " + str.charAt(i);
+                }
+                return newstring;
+            }
         }
-        return newstring;
+        return "";
     }
   
     /**
